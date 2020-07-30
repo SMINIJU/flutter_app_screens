@@ -61,8 +61,7 @@ class MyApp extends StatelessWidget {
                           ),
                           SizedBox(height: 20.0),
                           Padding(
-
-                                //padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(8.0),
                                 child: RaisedButton(
                                     color: Colors.red,
                                     child: Text('Sign In',
