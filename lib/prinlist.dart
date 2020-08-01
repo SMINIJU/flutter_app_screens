@@ -9,12 +9,13 @@ _PrinListState createState() => _PrinListState();
 
 class _PrinListState extends State<PrinList>{
   @override
+  var Prinname  = ['Cascade Realty Advisors Inc',        'Parkway Company',        'Fbs Business Finance'];
   Widget build(BuildContext context)
   {
-    var Prinname  =['Cascade Realty Advisors Inc'
-        'Parkway Company'
-        'Fbs Business Finance'];
-    return ListView.builder(
+     return MaterialApp(
+      home:Scaffold(
+      body:Form(
+      child: ListView.builder(
       itemCount: Prinname.length,
       itemBuilder: (context, index){
       return ListTile(
@@ -23,6 +24,9 @@ class _PrinListState extends State<PrinList>{
       );
 
     },
+    ),
+    ),
+      ),
     );
   }
 }
