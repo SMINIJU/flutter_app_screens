@@ -1,34 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_screens/prinlist.dart';
 
+class Homescreen extends StatelessWidget{
 
-class homescreen extends StatefulWidget {
-/*
-  final Function anotherscreen;
-  homescreen({this.anotherscreen})*/
-  @override
-  _homescreenState createState() => _homescreenState();
-}
-
-class _homescreenState extends State<homescreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return  MaterialApp(
+    home :Scaffold(
       appBar: AppBar(
-        title: Text("Warehouse"),
-
+        title: Text("Menu"),
       ),
       body:Form(
         child: Container(
-          child: RaisedButton(
-            child: Text("Back",
-            style: TextStyle(color: Colors.white),),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-        ),
-      )
+          child:ListView(
+            shrinkWrap: true,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
 
+                  children:<Widget>[
+                    FlatButton(
+                  onPressed: (){
+                    return  PrinList();
+                  },
+                  child: Image.asset('Assets/Warehouse1.jpg')                ,
+                  )
+                    ]
+                ),
+              )
+]          ),
+        ),
+    )
+    )
     );
   }
 }
+
