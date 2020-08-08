@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_app_screens/home.dart';
@@ -96,6 +98,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  String Username = '';
+  String Password ='';
+//TextEditingController te =new TextEditingController();
 
   @override
   final _formKey = GlobalKey<FormState>();
@@ -121,16 +126,18 @@ class _MyAppState extends State<MyApp> {
               child: ListView(shrinkWrap: true, children: [
                 SizedBox(height: 20.0),
                 TextFormField(
+//                  controller: te,
                   decoration: InputDecoration(
-                      border: InputBorder.none, hintText: 'Enter user id'),
-                  validator: (value) {
-                    if (value.isEmpty) {
-                      return "Please Enter your name";
-                    } else {
-                      return null;
-                    }
-                  },
-                ),
+                      border: InputBorder.none, hintText: 'Enter user'),
+                      validator: (val) => val.isEmpty ? 'Enter Username' : null,
+
+
+                    onChanged: (val) {
+                      setState(() {
+
+                      });
+
+                    }),
                 SizedBox(height: 20.0),
                 TextFormField(
                   obscureText: true,
@@ -138,6 +145,7 @@ class _MyAppState extends State<MyApp> {
                       //border: InputBorder.none,
                       hintText: 'Enter password '),
                   validator: (value) {
+                    print(value);
                     if (value.isEmpty) {
                       return 'Please enter password';
                     } else
@@ -154,8 +162,7 @@ class _MyAppState extends State<MyApp> {
                                 child: Text('Sign In',
                                     style: TextStyle(color: Colors.white)),
                                 onPressed: () => {
-                                      if (_formKey.currentState.validate() ==
-                                          true)
+                                      if (_formKey.currentState.validate() )
                                         {
                                           Navigator.of(context).push(
                                             MaterialPageRoute(
