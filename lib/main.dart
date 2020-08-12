@@ -1,4 +1,8 @@
 import 'dart:convert';
+//import 'dart:js';
+import 'package:flutter_app_screens/Prin_notifer.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_app_screens/UserPrincipal.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -6,9 +10,14 @@ import 'package:flutter_app_screens/home.dart';
 import 'package:flutter_app_screens/UserList.dart';
 
 
-void main() {
-  runApp(MyApp());
-}
+void main()=> runApp(MultiProvider(
+  providers:[
+    ChangeNotifierProvider(
+      create: (context) => PrinNotifer(),
+    ),
+  ] ,
+  child: MyApp(),
+));
 
 //class MyApp extends StatelessWidget {
 //  // This widget is the root of your application.

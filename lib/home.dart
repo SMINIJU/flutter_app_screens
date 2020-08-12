@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_screens/STKRPTCARD.dart';
 import 'package:flutter_app_screens/StockReport.dart';
 import 'package:flutter_app_screens/prinlist.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_app_screens/UserList.dart';
 import 'package:flutter_app_screens/UserPrincipal.dart';
+import 'package:flutter_app_screens/princlass.dart';
 
 //class Homescreen extends StatelessWidget {
 //
@@ -50,7 +52,8 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-  var MenuList= ['Stock Report' , 'Transaction Report'];
+//  var MenuList = ['Stock Report', 'Transaction Report'];
+
 //  final List<String>_listItem = [
 //    "Assets/icon1.jpg",
 //    " Assets/Warehouse1.jpg",
@@ -108,7 +111,7 @@ class _HomescreenState extends State<Homescreen> {
 //              //],
 //            ),
 //            );
-/*
+
       body: GridView.count(
         crossAxisCount: 2,
         padding: EdgeInsets.all(20),
@@ -118,8 +121,9 @@ class _HomescreenState extends State<Homescreen> {
           Container(
             child: InkWell(
               child: Text(
-                "Warehouse",
+                "GRN REPORT",
                 style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.center,
               ),
               onTap: () {
                 Navigator.of(context).push(
@@ -133,35 +137,14 @@ class _HomescreenState extends State<Homescreen> {
             ),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('Assets/Warehouse1.jpg'),
-                    fit: BoxFit.cover)),
+                    image: AssetImage('Assets/stock.png'), fit: BoxFit.cover)),
           ),
           Container(
             child: InkWell(
               child: Text(
-                "Stock Report",
+                "STOCK REPORT",
                 style: TextStyle(fontSize: 18),
-              ),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return Stock();
-                    },
-                  ),
-                );
-              },
-            ),
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('Assets/transfer.jpg'),
-                    fit: BoxFit.cover)),
-          ),
-          Container(
-            child: InkWell(
-              child: Text(
-                "CustomerList",
-                style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.center,
               ),
               onTap: () {
                 Navigator.of(context).push(
@@ -175,33 +158,54 @@ class _HomescreenState extends State<Homescreen> {
             ),
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('Assets/icon1.jpg'), fit: BoxFit.cover)),
+                    image: AssetImage('Assets/GRN.jpg'), fit: BoxFit.cover)),
+          ),
+          Container(
+            child: InkWell(
+              child: Text(
+                "TRANSACTION REPORT",
+                style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.center,
+              ),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Princ();
+                    },
+                  ),
+                );
+              },
+            ),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('Assets/Trans.png'), fit: BoxFit.cover)),
           ),
         ],
-      ), */
+      ),
 
-          body: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: ListView.builder(
-                  itemCount: MenuList == null ? 0 : MenuList.length,
-                  itemBuilder: (context, index) {
-                    return Builder(
-                        builder: (context) => Center(
-                          child: ListTile(
-                            title: Text(MenuList[index]),
-                            trailing: Icon(Icons.keyboard_arrow_right),
-                            onTap: () {
-                              Navigator.of(context)
-                                  .push(MaterialPageRoute(builder: (context) {
-                                return UserPrin();
-                              }));
-                            },
-                          ),
-                        ));
-                  },
-                ),
-              )),
+//          body: Padding(
+//              padding: const EdgeInsets.all(8.0),
+//              child: Container(
+//                child: ListView.builder(
+//                  itemCount: MenuList == null ? 0 : MenuList.length,
+//                  itemBuilder: (context, index) {
+//                    return Builder(
+//                        builder: (context) => Center(
+//                          child: ListTile(
+//                            title: Text(MenuList[index]),
+//                            trailing: Icon(Icons.keyboard_arrow_right),
+//                            onTap: () {
+//                              Navigator.of(context)
+//                                  .push(MaterialPageRoute(builder: (context) {
+//                                return UserPrin();
+//                              }));
+//                            },
+//                          ),
+//                        ));
+//                  },
+//                ),
+//              )),
     ));
   }
 }
