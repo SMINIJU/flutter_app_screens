@@ -19,7 +19,7 @@ class _UserPrinState extends State<UserPrin> {
 //  Map Data;
 
   Future getData() async {
-    http.Response response = await http.get("http://192.168.0.4:3000/api/PrincipalList");
+    http.Response response = await http.get("http://192.168.0.4:3000/api/PrincipalList/awaredemo");
     setState(() {
       userData;
     });
@@ -43,11 +43,13 @@ class _UserPrinState extends State<UserPrin> {
             onPressed: () => Navigator.pop(context),
             color: Colors.white,
           ),
-          backgroundColor: Colors.teal,
+          backgroundColor: Colors.lightBlue ,
           centerTitle: true,
           title: Text(
             "Customer List",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white,
+            fontFamily: 'Open Sans'  ,
+            fontSize: 25),
           ),
         ),
         body: Padding(
@@ -60,8 +62,15 @@ class _UserPrinState extends State<UserPrin> {
                       builder: (context) => Center(
                             child: ListTile(
                               title: Text(
-                                  " ${userData[index]["name"]}"),
-                              subtitle: Text("${userData[index]["code"]} "),
+                                  " ${userData[index]["name"]}",
+                              style: TextStyle(
+                                  fontSize: 20
+                              ),     ),
+
+                              subtitle: Text("${userData[index]["code"]} ",
+                                  style: TextStyle(
+                                  fontSize: 15
+                              ), ),
                               trailing: Icon(Icons.keyboard_arrow_right),
 
                               onTap: () {
